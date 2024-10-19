@@ -1,0 +1,73 @@
+#login {
+  background: linear-gradient(120deg, #f29043 44.9%, #fff 45%) no-repeat fixed;
+}
+
+#app {
+  background: linear-gradient(120deg, #fff 44.9%, #f29043 45%) no-repeat fixed;
+}
+
+header {
+  border-bottom: 1px solid #bebcbc;
+  padding: 5px;
+  background-color: #fff;
+}
+
+.color-primary {
+  color: #2a3759;
+}
+
+.color-secondary {
+  color: #f29043;
+}
+
+.icon-detail {
+  font-size: 50px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.text-login {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.coins {
+  position: absolute;
+  bottom: 100px;
+}
+
+.button-login {
+  border-radius: 10px;
+  background-color: #2a3759;
+  color: #fff;
+  width: 50%;
+  margin: 0 25%;
+}
+
+.button-login:hover,
+.button-default:hover {
+  background-color: #f29043;
+  columns: #fff;
+}
+
+.button-default {
+  border-radius: 10px;
+  background-color: #2a3759;
+  color: #fff;
+}
+
+.link-default {
+  color: #2a3759;
+  cursor: pointer;
+}
+
+.link-default:hover {
+  color: #f29043;
+}
+
+.info {
+  background-color: #fff;
+  border-radius: 20px 20px 0 0;
+  padding: 20px 0 0 0;
+}
