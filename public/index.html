@@ -58,7 +58,7 @@
                         </div>
                         <div class="row">
                             <div class="col">
-                                <p class="text-center mt-2 form-text">Ainda não tem conta? <span class="link-default" data-bs-toggle="modal" data-bs-target="#exampleModal">Criar uma conta.</span></p>
+                                <p class="text-center mt-2 form-text">Ainda não tem conta? <span class="link-default" data-bs-toggle="modal" data-bs-target="#register-modal">Criar uma conta.</span></p>
                             </div>
                         </div>
                         <div class="row">
@@ -80,20 +80,36 @@
             </div>
         </div>
         <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="register-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Crie sua conta</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Crie sua conta</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form id="create-form">
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label for="email-create-input" class="form-label">E-mail</label>
+                                <input type="email" class="form-control" id="email-create-input" aria-describedby="emailHelp">
+                                <div id="emailHelp" class="form-text">Utilize seu e-mail para criar a conta.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password-create-input" class="form-label">Senha</label>
+                                <input type="password" class="form-control" id="password-create-input">
+                                <div id="emailHelp" class="form-text">Utilize uma senha fácil de lembrar e anote para não esquecer.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password-confirm-input" class="form-label">Confirmar Senha</label>
+                                <input type="password" class="form-control" id="password-confirm-input">
+                                <div id="emailHelp" class="form-text">Repita sua senha.</div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary button-cancel" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn button-default">Criar conta</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
