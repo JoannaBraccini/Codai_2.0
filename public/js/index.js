@@ -37,6 +37,12 @@ document.getElementById("create-form").addEventListener("submit", (e) => {
   const passwordConfirm = document.getElementById(
     "password-confirm-input"
   ).value;
+  const validarEmail = localStorage.find((usuario) => usuario.email === email);
+
+  if (validarEmail) {
+    alert("Email já cadastrado no sistema.");
+    return;
+  }
 
   if (email.lenght < 6) {
     alert("Insira um e-mail válido.");

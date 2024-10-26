@@ -79,9 +79,15 @@ header {
   border: 2px solid #f29043;
 }
 
-.button-float:hover {
+.button-float:hover,
+.button-actions:hover {
   color: #2a3759;
   background-color: #fff;
+}
+
+.button-actions {
+  color: #f29043;
+  padding: 0 4px;
 }
 
 .link-default {
