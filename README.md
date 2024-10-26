@@ -1,14 +1,14 @@
+<img src="./public/assets/images/growdev-logo.png" alt="Growdev" />  
+
 # Projeto Codaí 2.0
 
 <img src="./public/assets/images/codai-logo.png" alt="Codaí" />     
-<img src="./public/assets/images/nikel-logo.png" alt="Nikel" />
 
-Este é um projeto da Growdev, 
-<img src="./public/assets/images/growdev-logo.png" alt="Growdev" />  
-utilizado como avaliação para inscrição no curso Fullstack Web Developer.  
+Este é um projeto da Growdev, utilizado como avaliação para inscrição no curso Fullstack Web Developer.  
 
 ## Uso/Exemplos
 
+<img src="./public/assets/images/nikel-logo.png" alt="Nikel" />
 Aplicação para controle financeiro com entradas e saídas.
 
 
