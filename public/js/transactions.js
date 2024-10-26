@@ -3,12 +3,14 @@ let logged = sessionStorage.getItem("logged");
 const session = localStorage.getItem("session");
 
 let data = { transactions: [] };
+let editingId = null;
+
+checkLogged();
 
 document.getElementById("button-logout").addEventListener("click", logout);
-document.getElementById("edit").addEventListener("click", (e) => {
-  const id = e.target.id.split(" ")[0]; // Extrai o ID do botão clicado
-  editTransaction(id);
-});
+document
+  .querySelector(".button-float")
+  .addEventListener("click", addTransaction);
 
 //ADICIONAR/EDITAR LANÇAMENTO
 document.getElementById("transaction-form").addEventListener("submit", (e) => {
@@ -18,6 +20,16 @@ document.getElementById("transaction-form").addEventListener("submit", (e) => {
   const description = document.getElementById("description-input").value;
   const date = document.getElementById("date-input").value;
   const type = document.querySelector("input[name='type-input']:checked").value;
+  let currentTotal = checkTotal();
+
+  // Verificar se a operação não vai deixar o total negativo
+  if (type === "2" && currentTotal - value < 0) {
+    if (
+      !confirm("A operação resultará em um saldo negativo. Deseja prosseguir?")
+    ) {
+      return; // Cancela a operação se o usuário não confirmar
+    }
+  }
 
   if (editingId !== null) {
     // Atualiza a transação existente
@@ -46,13 +58,55 @@ document.getElementById("transaction-form").addEventListener("submit", (e) => {
   getTransactions();
 });
 
-//EXCLUIR LANÇAMENTO
-document.getElementById("delete").addEventListener("click", (e) => {
-  const id = e.target.id.split(" ")[0];
-  deleteTransaction(id);
-});
+//ADICIONAR LANÇAMENTO
+function addTransaction() {
+  editingId = null; // Reseta o ID de edição
+  document.getElementById("transaction-form").reset(); // Limpa o formulário
+  document.getElementById("modal-title").innerText = "Adicionar Lançamento"; // Reseta o título
+  document.getElementById("button-save").innerText = "Adicionar";
+  myModal.show();
+}
 
-checkLogged();
+//EDITAR LANÇAMENTO
+function editTransaction(id) {
+  const transaction = data.transactions.find((item, index) => index === id - 1);
+
+  if (transaction) {
+    document.getElementById("value-input").value = transaction.value;
+    document.getElementById("description-input").value =
+      transaction.description;
+    document.getElementById("date-input").value = transaction.date;
+    document.querySelector(
+      `input[name='type-input'][value='${transaction.type}']`
+    ).checked = true;
+
+    editingId = id - 1; // Armazena o índice da transação sendo editada
+    document.getElementById("modal-title").innerText = "Editar Lançamento";
+    document.getElementById("button-save").innerText = "Salvar";
+    myModal.show();
+  }
+}
+
+//EXCLUIR LANÇAMENTO
+function deleteTransaction(id) {
+  const index = data.transactions.findIndex((item, index) => index === id - 1);
+
+  if (index === -1) {
+    alert("Lançamento não encontrado.");
+    return;
+  }
+  if (
+    index !== -1 &&
+    confirm("Esta ação não pode ser desfeita. Deseja excluir este lançamento?")
+  ) {
+    data.transactions.splice(index, 1);
+
+    saveData(data);
+    getTransactions();
+
+    alert("Lançamento excluído com sucesso.");
+  }
+}
 
 function checkLogged() {
   if (session) {
@@ -67,9 +121,8 @@ function checkLogged() {
   const dataUser = localStorage.getItem(logged);
   if (dataUser) {
     data = JSON.parse(dataUser);
+    getTransactions();
   }
-
-  getTransactions();
 }
 
 function logout() {
@@ -86,12 +139,7 @@ function getTransactions() {
 
   if (transactions.length) {
     transactions.forEach((item) => {
-      let type = "Entrada";
-
-      if (item.type === "2") {
-        type = "Saída";
-      }
-
+      let type = item.type === "1" ? "Entrada" : "Saída";
       id++;
 
       transactionsHtml += `
@@ -100,8 +148,8 @@ function getTransactions() {
             <td>${item.value.toFixed(2)}</td>
             <td>${type}</td>
             <td>${item.description}</td>
-            <td><i class="bi bi-pencil-square button-actions" id="${id} edit"></i>
-            <i class="bi bi-x-square button-actions" id="${id} delete"></i></td>
+            <td><i class="bi bi-pencil-square button-actions" onclick="editTransaction(${id})"></i>
+            <i class="bi bi-x-square button-actions" onclick="deleteTransaction(${id})"></i></td>
         </tr>
       `;
     });
@@ -113,20 +161,17 @@ function saveData(data) {
   localStorage.setItem(data.login, JSON.stringify(data));
 }
 
-//EDITAR LANÇAMENTO
-function editTransaction(id) {
-  const transaction = data.transactions.find((item, index) => index === id - 1);
-  if (transaction) {
-    // Preencher o formulário com os dados da transação
-    document.getElementById("value-input").value = transaction.value;
-    document.getElementById("description-input").value =
-      transaction.description;
-    document.getElementById("date-input").value = transaction.date;
-    document.querySelector(
-      `input[name='type-input'][value='${transaction.type}']`
-    ).checked = true;
+function checkTotal() {
+  const transactions = data.transactions;
+  let total = 0;
 
-    editingId = id - 1; // Armazena o índice da transação sendo editada
-    myModal.show();
-  }
+  transactions.forEach((item) => {
+    if (item.type === "1") {
+      total += item.value;
+    } else {
+      total -= item.value;
+    }
+  });
+
+  return total;
 }

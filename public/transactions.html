@@ -78,26 +78,26 @@
             <button class="btn button-float" data-bs-toggle="modal" data-bs-target="#transaction-modal"><i class="bi bi-plus"></i></button>
         </div>
         <!-- Modal -->
-        <div class="modal fade" id="transaction-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="transaction-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Adicionar Lançamento</h1>
+                        <h1 class="modal-title fs-5" id="modal-title">Adicionar Lançamento</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <form id="transaction-form">
                         <div class="modal-body">
                             <div class="mb-3">
                                 <label for="value-input" class="form-label">Valor</label>
-                                <input type="number" step="any" class="form-control" id="value-input">
+                                <input type="number" step="any" class="form-control" id="value-input" required>
                             </div>
                             <div class="mb-3">
                                 <label for="description-input" class="form-label">Descrição</label>
-                                <input type="text" class="form-control" id="description-input">
+                                <input type="text" class="form-control" id="description-input" required>
                             </div>
                             <div class="mb-3">
                                 <label for="date-input" class="form-label">Data</label>
-                                <input type="date" class="form-control" id="date-input">
+                                <input type="date" class="form-control" id="date-input" required>
                             </div>
                             <div class="mb-3">
                                 <div class="form-check form-check-inline">
@@ -112,7 +112,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary button-cancel" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="submit" class="btn button-default">Adicionar</button>
+                            <button type="submit" class="btn button-default" id="button-save">Adicionar</button>
                         </div>
                     </form>
                 </div>

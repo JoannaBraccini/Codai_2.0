@@ -4,6 +4,8 @@ const session = localStorage.getItem("session");
 
 let data = { transactions: [] };
 
+checkLogged();
+
 document.getElementById("button-logout").addEventListener("click", logout);
 document.getElementById("transactions-button").addEventListener("click", () => {
   window.location.href = "transactions.html";
@@ -17,6 +19,16 @@ document.getElementById("transaction-form").addEventListener("submit", (e) => {
   const description = document.getElementById("description-input").value;
   const date = document.getElementById("date-input").value;
   const type = document.querySelector("input[name='type-input']:checked").value;
+  let currentTotal = getTotal();
+
+  // Verificar se a operação não vai deixar o total negativo
+  if (type === "2" && currentTotal - value < 0) {
+    if (
+      !confirm("A operação resultará em um saldo negativo. Deseja prosseguir?")
+    ) {
+      return; // Cancela a operação se o usuário não confirmar
+    }
+  }
 
   data.transactions.unshift({
     value,
@@ -35,8 +47,6 @@ document.getElementById("transaction-form").addEventListener("submit", (e) => {
 
   alert("Lançamento adicionado com sucesso.");
 });
-
-checkLogged();
 
 function checkLogged() {
   if (session) {
@@ -67,7 +77,6 @@ function logout() {
 
 function getCashIn() {
   const transactions = data.transactions;
-
   const cashIn = transactions.filter((item) => item.type === "1");
 
   if (cashIn.length) {
@@ -154,6 +163,7 @@ function getTotal() {
   });
 
   document.getElementById("total").innerHTML = `R$ ${total.toFixed(2)}`;
+  return total;
 }
 
 function saveData(data) {

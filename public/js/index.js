@@ -37,19 +37,18 @@ document.getElementById("create-form").addEventListener("submit", (e) => {
   const passwordConfirm = document.getElementById(
     "password-confirm-input"
   ).value;
-  const validarEmail = localStorage.find((usuario) => usuario.email === email);
 
-  if (validarEmail) {
+  if (localStorage.getItem(email)) {
     alert("Email já cadastrado no sistema.");
     return;
   }
 
-  if (email.lenght < 6) {
+  if (email.length < 6) {
     alert("Insira um e-mail válido.");
     return;
   }
 
-  if (password.lenght < 4) {
+  if (password.length < 4) {
     alert("A senha deve ter pelo menos 4 dígitos.");
   }
 
