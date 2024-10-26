@@ -1,9 +1,9 @@
 #login {
-  background: linear-gradient(120deg, #f29043 44.9%, #fff 45%) no-repeat fixed;
+  background: linear-gradient(120deg, #0a58ca 44.9%, #fff 45%) no-repeat fixed;
 }
 
 #app {
-  background: linear-gradient(120deg, #fff 44.9%, #f29043 45%) no-repeat fixed;
+  background: linear-gradient(120deg, #fff 44.9%, #0a58ca 45%) no-repeat fixed;
 }
 
 header {
@@ -13,11 +13,15 @@ header {
 }
 
 .color-primary {
-  color: #2a3759;
+  color: #f29043;
 }
 
 .color-secondary {
-  color: #f29043;
+  color: #2a3759;
+}
+
+.color-tertiary {
+  color: #0a58ca;
 }
 
 .icon-detail {
@@ -39,7 +43,7 @@ header {
 
 .button-login {
   border-radius: 10px;
-  background-color: #2a3759;
+  background-color: #f29043;
   color: #fff;
   width: 50%;
   margin: 0 25%;
@@ -47,13 +51,13 @@ header {
 
 .button-login:hover,
 .button-default:hover {
-  background-color: #f29043;
+  background-color: #2a3759;
   color: #fff;
 }
 
 .button-default {
   border-radius: 10px;
-  background-color: #2a3759;
+  background-color: #f29043;
   color: #fff;
 }
 
@@ -70,15 +74,14 @@ header {
   bottom: 1rem;
   right: 2rem;
   font-size: 35px;
-  background-color: #2a3759;
+  background-color: #f29043;
   color: #fff;
-  border: 2px solid #2a3759;
+  border: 2px solid #f29043;
 }
 
-.button-default:hover {
-  border: #f29043;
+.button-float:hover {
+  color: #2a3759;
   background-color: #fff;
-  color: #f29043;
 }
 
 .link-default {

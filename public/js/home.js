@@ -2,7 +2,7 @@ const myModal = new bootstrap.Modal("#transaction-modal");
 let logged = sessionStorage.getItem("logged");
 const session = localStorage.getItem("session");
 
-const data = { transactions: [] };
+let data = { transactions: [] };
 
 document.getElementById("button-logout").addEventListener("click", logout);
 document.getElementById("transactions-button").addEventListener("click", () => {
@@ -14,7 +14,7 @@ document.getElementById("transaction-form").addEventListener("submit", (e) => {
   e.preventDefault();
 
   const value = parseFloat(document.getElementById("value-input").value);
-  const description = document.getElementById("escription-input").value;
+  const description = document.getElementById("description-input").value;
   const date = document.getElementById("date-input").value;
   const type = document.querySelector("input[name='type-input']:checked").value;
 
