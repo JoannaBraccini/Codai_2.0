@@ -13,7 +13,7 @@ Aplicação para controle financeiro com entradas e saídas.
 
 
 ## Teste
-![Vercel.com](https://vercel.com/api/toolbar/link/codai-2-0.vercel.app?via=project-dashboard-alias-list&p=1&page=/)
+![Vercel.com](https://codai-2-0.vercel.app/)
 
 
 ## Funcionalidades
