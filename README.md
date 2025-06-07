@@ -1,20 +1,19 @@
-<img src="./public/assets/images/growdev-logo.png" alt="Growdev" />  
-
 # Projeto Codaí 2.0
 
-<img src="./public/assets/images/codai-logo.png" alt="Codaí" />     
+![Growdev](./public/assets/images/growdev-logo.png)
 
-Este é um projeto da Growdev, utilizado como avaliação para inscrição no curso Fullstack Web Developer.  
+![Codaí](./public/assets/images/codai-logo.png)
+
+Este é um projeto da Growdev, utilizado como avaliação para inscrição no curso Fullstack Web Developer.
+
+---
 
 ## Uso/Exemplos
 
-<img src="./public/assets/images/nikel-logo.png" alt="Nikel" />
+![Nikel](./public/assets/images/nikel-logo.png)
 Aplicação para controle financeiro com entradas e saídas.
 
-
-## Teste
-![Vercel.com](https://codai-2-0.vercel.app/)
-
+---
 
 ## Funcionalidades
 
@@ -23,18 +22,16 @@ Aplicação para controle financeiro com entradas e saídas.
 - Validação de usuário
 - Verificação de saldo negativo
 
+---
 
 ## Screenshots
 
-
-<div style="text-align: center;">
-    <img src="./public/assets/preview/login.png" alt="Tela de Login" />
-    <img src="./public/assets/preview/signup.png" alt="Tela de Cadastro" />
-    <img src="./public/assets/preview/home.png" alt="Tela Inicial" />
-    <img src="./public/assets/preview/home_add.png" alt="Adicionar Lançamento" />
-    <img src="./public/assets/preview/transactions.png" alt="Transações" />
-    <img src="./public/assets/preview/transactions_add.png" alt="Adicionar Transação" />
-    <img src="./public/assets/preview/confirm.png" alt="Confirmação de Exclusão" />
-    <img src="./public/assets/preview/transactions_edit.png" alt="Editar Transação" />
-    <img src="./public/assets/preview/transactions_delete.png" alt="Excluir Transação" />
-</div>
+![Tela de Login](./public/assets/preview/login.png)
+![Tela de Cadastro](./public/assets/preview/signup.png)
+![Tela Inicial](./public/assets/preview/home.png)
+![Adicionar Lançamento](./public/assets/preview/home_add.png)
+![Transações](./public/assets/preview/transactions.png)
+![Adicionar Transação](./public/assets/preview/transactions_add.png)
+![Confirmação de Exclusão](./public/assets/preview/confirm.png)
+![Editar Transação](./public/assets/preview/transactions_edit.png)
+![Excluir Transação](./public/assets/preview/transactions_delete.png)
