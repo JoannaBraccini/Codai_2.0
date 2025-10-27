@@ -1,27 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --orange: #f29043;
+  --navy-blue: #2a3759;
+  --blue: #0a58ca;
+  --white: #ffffff;
+  --grey-light: #bebcbc;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  scrollbar-color: var(--orange) #f1f1f1;
+  scrollbar-width: thin;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--orange);
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: var(--navy-blue);
+}
+
 #login {
-  background: linear-gradient(120deg, #0a58ca 44.9%, #fff 45%) no-repeat fixed;
+  background: linear-gradient(120deg, var(--blue) 45.9%, var(--white) 46%)
+    no-repeat fixed;
 }
 
 #app {
-  background: linear-gradient(120deg, #fff 44.9%, #0a58ca 45%) no-repeat fixed;
+  background: linear-gradient(120deg, var(--white) 45.9%, var(--blue) 46%)
+    no-repeat fixed;
+}
+
+/* Media query para mobile - ajuste do gradiente */
+@media (max-width: 768px) {
+  #login {
+    background: linear-gradient(135deg, var(--blue) 49.9%, var(--white) 50%)
+      no-repeat fixed;
+    scroll-behavior: smooth;
+  }
+
+  #app {
+    background: linear-gradient(135deg, var(--white) 49.9%, var(--blue) 50%)
+      no-repeat fixed;
+  }
+
+  /* Animação de fade-in para o conteúdo */
+  .login-content {
+    animation: fadeInUp 1s ease-out;
+  }
+
+  /* Melhor contraste para textos do formulário no mobile */
+  .login-content .form-label,
+  .login-content .form-text,
+  .login-content .form-check-label {
+    color: #000000;
+    font-weight: 500;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
 header {
-  border-bottom: 1px solid #bebcbc;
+  border-bottom: 1px solid var(--grey-light);
   padding: 5px;
-  background-color: #fff;
+  background-color: var(--white);
 }
 
 .color-primary {
-  color: #f29043;
+  color: var(--orange);
 }
 
 .color-secondary {
-  color: #2a3759;
+  color: var(--navy-blue);
 }
 
 .color-tertiary {
-  color: #0a58ca;
+  color: var(--blue);
 }
 
 .icon-detail {
@@ -31,7 +104,7 @@ header {
 }
 
 .text-login {
-  color: #fff;
+  color: var(--white);
   font-size: 18px;
   font-weight: 500;
 }
@@ -43,22 +116,22 @@ header {
 
 .button-login {
   border-radius: 10px;
-  background-color: #f29043;
-  color: #fff;
+  background-color: var(--orange);
+  color: var(--white);
   width: 50%;
   margin: 0 25%;
 }
 
 .button-login:hover,
 .button-default:hover {
-  background-color: #2a3759;
-  color: #fff;
+  background-color: var(--navy-blue);
+  color: var(--white);
 }
 
 .button-default {
   border-radius: 10px;
-  background-color: #f29043;
-  color: #fff;
+  background-color: var(--orange);
+  color: var(--white);
 }
 
 .button-cancel {
@@ -74,33 +147,33 @@ header {
   bottom: 1rem;
   right: 2rem;
   font-size: 35px;
-  background-color: #f29043;
-  color: #fff;
-  border: 2px solid #f29043;
+  background-color: var(--orange);
+  color: var(--white);
+  border: 2px solid var(--orange);
 }
 
 .button-float:hover,
 .button-actions:hover {
-  color: #2a3759;
-  background-color: #fff;
+  color: var(--navy-blue);
+  background-color: var(--white);
 }
 
 .button-actions {
-  color: #f29043;
+  color: var(--orange);
   padding: 0 4px;
 }
 
 .link-default {
-  color: #2a3759;
+  color: var(--navy-blue);
   cursor: pointer;
 }
 
 .link-default:hover {
-  color: #f29043;
+  color: var(--orange);
 }
 
 .info {
-  background-color: #fff;
+  background-color: var(--white);
   border-radius: 20px 20px 0 0;
   padding: 20px 0 0 0;
 }
@@ -111,4 +184,29 @@ header {
 
 .menu {
   margin-right: 20px;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-color: var(--orange) #f1f1f1;
+  scrollbar-width: thin;
+}
+
+.table-responsive::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+  background: var(--orange);
+  border-radius: 10px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb:hover {
+  background: var(--navy-blue);
 }

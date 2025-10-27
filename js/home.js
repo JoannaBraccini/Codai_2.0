@@ -90,6 +90,9 @@ function getCashIn() {
     }
 
     for (let index = 0; index < limit; index++) {
+      // Formatar data para dd/MM/yyyy
+      const dateFormatted = cashIn[index].date.split("-").reverse().join("/");
+
       cashInHtml += `
         <div class="row mb-4">
             <div class="col-12">
@@ -99,9 +102,7 @@ function getCashIn() {
                         <div class="col-12 col-md-8">
                             <p>${cashIn[index].description}</p>
                         </div>
-                        <div class="col-12 col-md3 d-flex justify-content-end">${
-                          cashIn[index].date
-                        }</div>
+                        <div class="col-12 col-md3 d-flex justify-content-end">${dateFormatted}</div>
                     </div>
                 </div>
             </div>
@@ -128,6 +129,9 @@ function getCashOut() {
     }
 
     for (let index = 0; index < limit; index++) {
+      // Formatar data para dd/MM/yyyy
+      const dateFormatted = cashOut[index].date.split("-").reverse().join("/");
+
       cashOutHtml += `
         <div class="row mb-4">
             <div class="col-12">
@@ -137,9 +141,7 @@ function getCashOut() {
                         <div class="col-12 col-md-8">
                             <p>${cashOut[index].description}</p>
                         </div>
-                        <div class="col-12 col-md3 d-flex justify-content-end">${
-                          cashOut[index].date
-                        }</div>
+                        <div class="col-12 col-md3 d-flex justify-content-end">${dateFormatted}</div>
                     </div>
                 </div>
             </div>

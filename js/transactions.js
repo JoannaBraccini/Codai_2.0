@@ -142,9 +142,12 @@ function getTransactions() {
       let type = item.type === "1" ? "Entrada" : "Saída";
       id++;
 
+      // Formatar data para dd/MM/yyyy
+      const dateFormatted = item.date.split("-").reverse().join("/");
+
       transactionsHtml += `
         <tr>
-            <th scope="row">${item.date}</th>
+            <td>${dateFormatted}</td>
             <td>${item.value.toFixed(2)}</td>
             <td>${type}</td>
             <td>${item.description}</td>

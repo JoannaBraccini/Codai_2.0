@@ -40,14 +40,14 @@
     </header>
     <main>
         <div class="container-lg">
-            <div class="row">
+            <div class="row align-items-start">
                 <div class="col d-flex mt-4 justify-content-start align-items-center">
                     <i class="bi bi-currency-exchange color-primary icon-detail"></i>
-                    <span class="fs-2">Lançamentos</span>
+                    <span class="fs-2 text-nowrap">Lançamentos</span>
                 </div>
-                <div class="col d-flex mt-4 justify-content-end">
-                    <div class="text-center">
-                        <img src="./assets/images/coins.png" alt="image coins">
+                <div class="col d-flex mt-4 justify-content-end align-items-start">
+                    <div>
+                        <img src="./assets/images/coins.png" alt="image coins" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -56,20 +56,22 @@
                     <div class="container"> 
                         <div class="row">
                             <div class="col">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                        <th scope="col">Data</th>
-                                        <th scope="col">Valor</th>
-                                        <th scope="col">Tipo</th>
-                                        <th scope="col">Descrição</th>
-                                        <th scope="col">Ações</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="transactions-list">
-                                        
-                                    </tbody>
-                                </table>
+                                <div class="table-responsive">
+                                    <table class="table table-sm">
+                                        <thead>
+                                            <tr>
+                                            <th scope="col">Data</th>
+                                            <th scope="col">Valor</th>
+                                            <th scope="col">Tipo</th>
+                                            <th scope="col">Descrição</th>
+                                            <th scope="col">Ações</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="transactions-list">
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>

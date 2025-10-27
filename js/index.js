@@ -4,6 +4,19 @@ const session = localStorage.getItem("session");
 
 checkLogged();
 
+// Auto-scroll para o formulário no mobile após 1 segundo
+if (window.innerWidth <= 768) {
+  setTimeout(() => {
+    const loginContent = document.querySelector(".login-content");
+    if (loginContent) {
+      loginContent.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }, 1000);
+}
+
 //LOGAR NO SISTEMA
 document.getElementById("login-form").addEventListener("submit", (e) => {
   e.preventDefault();
